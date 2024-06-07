@@ -1,0 +1,15 @@
+services:
+
+  # Nginx server
+  nginx:
+    container_name: '${CONTAINER_NAME}-nginx'
+    image: nginx:latest
+    ports:
+      - '${APP_PORT}:80'
+    volumes:
+      - '../nginx.conf:/etc/nginx/conf.d/default.conf'
+      - '../../:/var/www'
+    depends_on:
+      - app
+    networks:
+      - app-network

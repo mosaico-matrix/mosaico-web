@@ -1,0 +1,7 @@
+#services:
+#  app:
+#    volumes:
+#      - '${STORAGE_MOUNT_PATH:-./storage}:/var/www/storage'
+#  mariadb:
+#    volumes:
+#      - '${STORAGE_DB_MOUNT_PATH:-./db-mount}:/var/lib/mysql'
