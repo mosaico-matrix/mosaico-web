@@ -111,7 +111,10 @@ docker exec "${CONTAINER_NAME}" chmod +x /var/www/storage/app/public
 docker exec "${CONTAINER_NAME}" setfacl -R -d -m u::rwX,g::rwX,o::rX /var/www/storage/app/public/
 
 # Install composer packages (read container name from environment variable)
-docker exec "${CONTAINER_NAME}" composer install --optimize-autoloader --no-dev
+COMPOSER_COMMAND="docker exec ${CONTAINER_NAME} composer install"
+if [ "$APP_ENV" == "production" ]; then
+    COMPOSER_COMMAND="${COMPOSER_COMMAND} --optimize-autoloader --no-dev"
+fi
 
 # Check that APP_KEY is set
 if [ -z "$APP_KEY" ]; then
