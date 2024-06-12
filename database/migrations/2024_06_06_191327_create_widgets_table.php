@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('repository_url');
+            $table->unsignedInteger('downloads')->default(0);
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
         });
     }
