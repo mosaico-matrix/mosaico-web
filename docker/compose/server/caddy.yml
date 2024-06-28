@@ -2,6 +2,7 @@ services:
 
   # Proxy server
   caddy:
+    restart: '${RESTART_POLICY}'
     image: caddy:latest
     container_name: '${CONTAINER_NAME}-caddy'
     depends_on:
@@ -12,5 +13,5 @@ services:
       - '80:80'
       - "443:443"
     volumes:
-      - '../../:/var/www'
+      - '../../:/var/www/${CONTAINER_NAME}'
       - '../Caddyfile:/etc/caddy/Caddyfile'

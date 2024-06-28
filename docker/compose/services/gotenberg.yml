@@ -1,0 +1,6 @@
+services:
+  gotenberg:
+    container_name: ${CONTAINER_NAME}-gotenberg
+    image: gotenberg/gotenberg:8
+    ports:
+      - "3000:3000"

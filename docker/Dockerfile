@@ -4,6 +4,7 @@ FROM php:8.3-fpm-alpine
 RUN apk update && apk add \
     icu \
     oniguruma-dev \
+    nano \
     zlib-dev \
     libpng-dev \
     icu-dev \
@@ -17,21 +18,17 @@ RUN apk update && apk add \
     nodejs \
     libwebp-dev \
     jpeg-dev \
-    tzdata \
     npm
 
 # Install bash
 RUN apk add --no-cache bash
-
-# Set timezone
-RUN cp /usr/share/zoneinfo/Europe/Rome /etc/localtime
 
 # Clear package cache
 RUN rm -rf /var/cache/apk/*
 
 # Install PHP extensions
 RUN docker-php-ext-configure gd --with-webp  --with-jpeg;
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd intl zip
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd intl zip calendar
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -45,6 +42,6 @@ RUN chmod a+r /usr/local/etc/php/php.ini
 RUN adduser -S laravel -G www-data --uid 1000
 
 # Ownership of the Laravel app
-RUN chown -R 1001:www-data /var/www
+RUN chown -R 1000:www-data /var/www/
 
 USER laravel

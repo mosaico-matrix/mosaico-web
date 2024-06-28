@@ -1,12 +1,31 @@
 #!/bin/bash
 
-# Define your repository URL and branch (change as needed)
-REPO_URL=""
-BRANCH="master"
-PROD_ENV="/home/sail/ci-cd/XXXX/prod_env"
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
-# Define your deployment directory (change as needed)
-DEPLOY_DIR="/var/www/laravel-dockerized/sites/XXXX"
+usage() {
+    echo -e "${YELLOW}Usage:${NC} ./deploy.sh <path-to-prod-env-file>"
+}
+
+# Validate user argument, you should provide a path to the prod env file
+if [ -z "$1" ]; then
+    echo -e "${RED}Error:${NC} Missing argument"
+    usage
+    exit 1
+fi
+
+# Load .env file variables
+export $(grep -v '^#' "$1" | xargs)
+
+# Print the deployment configuration
+echo -e "${GREEN}Starting the deployment with the following configuration:${NC}"
+echo -e "${BLUE}Repository URL:${NC} $REPO_URL"
+echo -e "${BLUE}Branch:${NC} $BRANCH"
+echo -e "${BLUE}Deployment directory:${NC} $DEPLOY_DIR"
 
 # Create a temporary directory for the clone
 TMP_DIR=$(mktemp -d)
@@ -29,7 +48,7 @@ if [ -f "$DEPLOY_DIR/.env" ]; then
 fi
 
 # Copy production env file
-cp "$PROD_ENV" "$DEPLOY_DIR/.env"
+cp "$1" "$DEPLOY_DIR/.env" || exit 1
 
 # Change to the deployment directory
 cd "$DEPLOY_DIR" || exit 1
@@ -38,7 +57,7 @@ cd "$DEPLOY_DIR" || exit 1
 chmod -R 770 "$DEPLOY_DIR"
 
 # Run start script (add error handling if needed)
-#./scripts/start.sh --server caddy --services mailpit
+./scripts/start.sh
 
 # Clean up temporary directory
 rm -rf "$TMP_DIR"
