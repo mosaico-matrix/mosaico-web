@@ -35,7 +35,7 @@ abstract class Controller
      * @param string $message
      * @return JsonResponse
      */
-    protected function okResponse(mixed $data = null, string $message = "Success"): JsonResponse
+    protected function okResponse(mixed $data = null, string $message = ""): JsonResponse
     {
         return $this->jsonResponse(200, $message, $data);
     }
@@ -46,7 +46,7 @@ abstract class Controller
      * @param string $message
      * @return JsonResponse
      */
-    protected function badRequestResponse(string $message = 'Bad Request'): JsonResponse
+    protected function badRequestResponse(string $message = ''): JsonResponse
     {
         return $this->jsonResponse(400, $message);
     }
@@ -57,7 +57,7 @@ abstract class Controller
      * @param string $message
      * @return JsonResponse
      */
-    protected function notFoundResponse(string $message = 'Not Found'): JsonResponse
+    protected function notFoundResponse(string $message = 'The requested resource was not found'): JsonResponse
     {
         return $this->jsonResponse(404, $message);
     }
