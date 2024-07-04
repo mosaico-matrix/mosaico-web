@@ -15,7 +15,7 @@ class WidgetSeeder extends Seeder
     {
         Widget::factory()->count(10)->create([
             'user_id' => 1,
-            'repository_url' => '/home/murkrow/Repos/mosaico/widget-example'
+            'repository_url' => 'https://github.com/mosaico-matrix/mosaico-widget-template',
         ]);
     }
 }
