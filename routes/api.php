@@ -15,6 +15,7 @@ Route::middleware(RateLimiter::class)->group(function () {
     Route::group(['prefix' => 'widgets'], function () {
         Route::get('/', [WidgetController::class, 'index']);
         Route::get('/{widget}', [WidgetController::class, 'show']);
+        Route::get('/{widget}/icon', [WidgetController::class, 'showIcon']);
     });
 
     // Protected Routes

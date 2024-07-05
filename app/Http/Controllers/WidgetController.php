@@ -14,7 +14,17 @@ class WidgetController extends Controller
     {
         return
             $this->okResponse(
-                Widget::filter()->sort()->get()
+                Widget::filter()
+                    ->sort()
+                    ->get()
+                    ->map(function ($widget) {
+                        return [
+                            'id' => $widget->id,
+                            'name' => $widget->name,
+                            'tagline' => $widget->tagline,
+                            'user' => $widget->user,
+                        ];
+                    })
             );
     }
 
@@ -40,7 +50,25 @@ class WidgetController extends Controller
     public function show(Widget $widget)
     {
         return
-            $this->okResponse($widget);
+            $this->okResponse([
+                'id' => $widget->id,
+                'name' => $widget->name,
+                'tagline' => $widget->tagline,
+                'description' => $widget->description,
+                'user' => $widget->user,
+                'images' => $widget->getMedia('images')->map(function ($image) {
+                    return $image->getUrl();
+                }),
+                'repository_url' => $widget->repository_url,
+            ]);
+    }
+
+    /**
+     * Display the widget icon as file
+     */
+    public function showIcon(Widget $widget)
+    {
+        return response()->file($widget->getFirstMediaPath('icon'));
     }
 
     /**

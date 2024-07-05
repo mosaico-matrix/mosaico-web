@@ -17,5 +17,21 @@ class WidgetSeeder extends Seeder
             'user_id' => 1,
             'repository_url' => 'https://github.com/mosaico-matrix/mosaico-widget-template',
         ]);
+
+        // Add icon and images
+        foreach (Widget::all() as $widget) {
+
+            // Icon
+            $widget
+                ->addMediaFromUrl('https://picsum.photos/200/200')
+                ->toMediaCollection('icon');
+
+            // Images
+            for ($i = 0; $i < 3; $i++) {
+                $widget
+                    ->addMediaFromUrl('https://picsum.photos/500/300')
+                    ->toMediaCollection('images');
+            }
+        }
     }
 }

@@ -19,7 +19,8 @@ class WidgetFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
-            'description' => $this->faker->sentence,
+            'tagline' => $this->faker->sentence,
+            'description' => file_get_contents(resource_path('examples/widgets/description.md')),
         ];
     }
 }
