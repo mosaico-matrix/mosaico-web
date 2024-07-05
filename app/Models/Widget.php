@@ -21,8 +21,6 @@ class Widget extends Model implements HasMedia
         'repository_url',
         'downloads',
     ];
-    protected $with = ['user'];
-
     /*
     |--------------------------------------------------------------------------
     | Relationships

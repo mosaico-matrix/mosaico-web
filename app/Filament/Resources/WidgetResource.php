@@ -30,18 +30,34 @@ class WidgetResource extends Resource
                     ->columnSpan(2)
                     ->required(),
                 Forms\Components\SpatieMediaLibraryFileUpload::make('icon')
+                    ->hint('Small icon, pixel art is recommended')
                     ->label(__('mosaico.icon'))
                     ->collection('icon')
                     ->image()
                     ->avatar()
                     ->required(),
-                Forms\Components\RichEditor::make('description')
+                Forms\Components\TextInput::make('tagline')
+                    ->label(__('mosaico.tagline'))
+                    ->columnSpanFull()
+                    ->maxLength(50)
+                    ->required(),
+                Forms\Components\MarkdownEditor::make('description')
+                    ->required()
+                    ->placeholder("Enter markdown here")
+                    ->hint('The first lines are displayed under the widget name, the rest will be displayed in the widget details page')
                     ->label(__('mosaico.description'))
                     ->disableToolbarButtons([
                         'attachFiles'
                     ])
                     ->columnSpanFull()
                     ->label('Description'),
+                Forms\Components\SpatieMediaLibraryFileUpload::make('images')
+                    ->label('Images')
+                    ->hint('Help the users know what your widget looks like')
+                    ->collection('images')
+                    ->columnSpanFull()
+                    ->multiple()
+                    ->image(),
                 Forms\Components\TextInput::make('repository_url')
                     ->columnSpanFull()
                     ->label(__('mosaico.repository_url'))
