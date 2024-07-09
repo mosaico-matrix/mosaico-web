@@ -10,6 +10,7 @@ services:
     volumes:
       - '../nginx.conf:/etc/nginx/conf.d/default.conf'
       - '../../:/var/www/${CONTAINER_NAME}'
+      - '${STORAGE_MOUNT_PATH:-./storage}:/var/www/${CONTAINER_NAME}/storage'
     depends_on:
       - app
     networks:
