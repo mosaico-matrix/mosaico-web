@@ -27,7 +27,7 @@ RUN apk add --no-cache bash
 RUN rm -rf /var/cache/apk/*
 
 # Install PHP extensions
-RUN docker-php-ext-configure gd --with-webp  --with-jpeg;
+#RUN docker-php-ext-configure gd --with-webp  --with-jpeg;
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd intl zip calendar
 
 # Get latest Composer
