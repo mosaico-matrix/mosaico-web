@@ -20,7 +20,9 @@ class Widget extends Model implements HasMedia
         'user_id',
         'repository_url',
         'downloads',
+        'tagline',
     ];
+    
     /*
     |--------------------------------------------------------------------------
     | Relationships

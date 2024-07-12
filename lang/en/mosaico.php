@@ -6,4 +6,5 @@ return [
     'description' => 'Description',
     'repository_url' => 'Repository URL',
     'name' => 'Name',
+    'tagline' => 'Tagline',
 ];
