@@ -37,6 +37,8 @@ class WidgetResource extends Resource
                     ->avatar()
                     ->required(),
                 Forms\Components\TextInput::make('tagline')
+                    ->hint('This will be displayed under the widget name')
+                    ->placeholder('Short description')
                     ->label(__('mosaico.tagline'))
                     ->columnSpanFull()
                     ->maxLength(50)
@@ -44,7 +46,7 @@ class WidgetResource extends Resource
                 Forms\Components\MarkdownEditor::make('description')
                     ->required()
                     ->placeholder("Enter markdown here")
-                    ->hint('The first lines are displayed under the widget name, the rest will be displayed in the widget details page')
+                    ->hint('This will be displayed in the widget details page')
                     ->label(__('mosaico.description'))
                     ->disableToolbarButtons([
                         'attachFiles'
