@@ -1,6 +1,3 @@
-[submodule "public/docs/mosaico-docs"]
-	path = public/docs/mosaico-docs
-	url = https://github.com/mosaico-matrix/mosaico-docs
 [submodule "public/mosaico-docs"]
 	path = public/mosaico-docs
 	url = https://github.com/mosaico-matrix/mosaico-docs

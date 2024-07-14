@@ -80,6 +80,9 @@ docker exec "${CONTAINER_NAME}" chmod +x storage/app/public
 # The X for directories is very useful to ensure that new files and directories created there will be accessible
 docker exec "${CONTAINER_NAME}" setfacl -R -d -m u::rwX,g::rwX,o::rX storage/app/public/
 
+# Call build-docs script
+docker exec "${CONTAINER_NAME}" bash -c "scripts/build-docs.sh"
+
 # Install composer packages (read container name from environment variable)
 COMPOSER_COMMAND="docker exec ${CONTAINER_NAME} composer install"
 if [ "$APP_ENV" == "production" ]; then

@@ -4,6 +4,7 @@ FROM php:8.3-fpm-alpine
 RUN apk update && apk add \
     icu \
     oniguruma-dev \
+    build-base \
     nano \
     zlib-dev \
     libpng-dev \
@@ -18,6 +19,7 @@ RUN apk update && apk add \
     nodejs \
     libwebp-dev \
     jpeg-dev \
+    py3-pip \
     npm
 
 # Install bash
