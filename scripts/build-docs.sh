@@ -1,6 +1,9 @@
 echo "Building docs"
-git submodule update --remote public/mosaico-docs
 cd public/mosaico-docs
+git fetch --all
+git remote set-head origin main
+cd ../..
+git submodule update --remote public/mosaico-docs
 if [ $? -ne 0 ]; then
     echo "Error pulling mosaico-docs"
     exit 1
