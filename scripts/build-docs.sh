@@ -1,4 +1,5 @@
 echo "Building docs"
+git submodule update --remote public/mosaico-docs
 cd public/mosaico-docs
 if [ $? -ne 0 ]; then
     echo "Error pulling mosaico-docs"
