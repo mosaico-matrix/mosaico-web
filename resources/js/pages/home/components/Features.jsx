@@ -8,7 +8,7 @@ import {
     ZapIcon,
 } from 'lucide-react';
 
-export default function Home() {
+export default function Features() {
     const featureItems = [
         {
             title: 'Intuitive Interface',
