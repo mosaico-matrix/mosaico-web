@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\WidgetController;
+use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\WidgetController;
 use App\Http\Middleware\RateLimiter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
