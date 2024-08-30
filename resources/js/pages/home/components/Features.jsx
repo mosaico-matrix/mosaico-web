@@ -1,4 +1,4 @@
-import { LandingFeatureList } from '@/components/landing/feature/LandingFeatureList';
+import {LandingFeatureList} from '@/components/landing/feature/LandingFeatureList';
 import {
     GithubIcon,
     LayersIcon,
@@ -11,50 +11,34 @@ import {
 export default function Features() {
     const featureItems = [
         {
-            title: 'Intuitive Interface',
+            title: 'Automatic deployment to Vercel',
             description:
-                'Design and customize your app easily with our simple drag-and-drop interface.',
-            icon: <SparklesIcon />,
+                'Deploying the generated template to Vercel is as easy as clicking a button. ',
+            icon: <SparklesIcon/>,
         },
         {
-            title: 'Seamless Integration',
+            title: 'Dynamic Social Image',
             description:
-                'Connect your app with other tools effortlessly for a smoother workflow.',
-            icon: <GithubIcon />,
+                'We generate an open graph image that will be visible when you share your site online.',
+            icon: <LineChartIcon/>,
         },
         {
-            title: 'Smart Analytics',
+            title: 'MDX blog, no server required',
             description:
-                'Gain valuable insights into user behavior and trends with our advanced analytics tools.',
-            icon: <LineChartIcon />,
+                'Shipixen comes with a fully featured MDX blog. ',
+            icon: <LayersIcon/>,
         },
-        {
-            title: 'Rock-Solid Security',
-            description:
-                'Rest assured, your data is safe with our top-notch security measures.',
-            icon: <ThumbsUpIcon />,
-        },
-        {
-            title: 'Automatic Updates',
-            description:
-                'Never miss out on the latest features - our app updates itself automatically!',
-            icon: <ZapIcon />,
-        },
-        {
-            title: 'Scalability on Demand',
-            description:
-                'Grow your app along with your business needs, effortlessly expanding to meet demand.',
-            icon: <LayersIcon />,
-        },
-    ];
+    ]
 
     return (
         <LandingFeatureList
-            title={'Nothing quite like it.'}
+            withBackgroundGlow
+            backgroundGlowVariant="primary"
+            variant="primary"
+            title={"Nothing quite like it."}
             description={
                 'Shipixen sets up everything you need to start working on your blog, website or product.'
             }
             featureItems={featureItems}
-        />
-    );
+        />);
 }
