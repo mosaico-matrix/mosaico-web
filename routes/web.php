@@ -8,7 +8,12 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Home');
 });
+
 Route::get('/docs', function () {
     return redirect('/mosaico-docs/site/index.html');
+});
+
+Route::get('privacy', function () {
+    return Inertia::render('Privacy');
 });
 
