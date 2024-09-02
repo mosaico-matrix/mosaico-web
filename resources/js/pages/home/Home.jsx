@@ -6,13 +6,13 @@ import Faq from "./components/Faq.jsx";
 import WidgetScripting from "./components/WidgetScripting.jsx";
 import Components from "./components/Components.jsx";
 import {Contact} from "lucide-react";
-import Contacts from "./components/Contacts.jsx";
+import Footer from "./components/Footer.jsx";
 
 export default function Home() {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <Heading />
-            <Contacts/>
+            <Footer/>
             {/*<Components />*/}
             {/*<WidgetScripting/>*/}
             {/*<WidgetShowcase />*/}
