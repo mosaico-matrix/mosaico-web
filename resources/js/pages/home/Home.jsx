@@ -5,17 +5,20 @@ import Credits from "./components/Credits.jsx";
 import Faq from "./components/Faq.jsx";
 import WidgetScripting from "./components/WidgetScripting.jsx";
 import Components from "./components/Components.jsx";
+import {Contact} from "lucide-react";
+import Contacts from "./components/Contacts.jsx";
 
 export default function Home() {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <Heading />
-            <Components />
-            <WidgetScripting/>
-            <WidgetShowcase />
-            <Features />
-            <Faq/>
-            <Credits/>
+            <Contacts/>
+            {/*<Components />*/}
+            {/*<WidgetScripting/>*/}
+            {/*<WidgetShowcase />*/}
+            {/*<Features />*/}
+            {/*<Faq/>*/}
+            {/*<Credits/>*/}
         </div>
     );
 }

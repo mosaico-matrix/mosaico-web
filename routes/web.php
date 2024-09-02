@@ -16,4 +16,3 @@ Route::get('/docs', function () {
 Route::get('privacy', function () {
     return Inertia::render('Privacy');
 });
-
