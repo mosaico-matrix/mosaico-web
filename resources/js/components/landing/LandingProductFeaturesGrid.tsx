@@ -99,7 +99,7 @@ export const LandingProductFeaturesGrid = ({
 
       <div
         className={clsx(
-          '!p-0 relative isolate grid md:grid-cols-2 gap-4',
+          '!p-0 relative isolate grid md:grid-cols-3 gap-4',
           `${containerType}-container`,
         )}
       >

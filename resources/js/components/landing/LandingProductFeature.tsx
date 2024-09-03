@@ -79,7 +79,7 @@ export const LandingProductFeature = ({
           'w-full p-6 flex flex-col items-center relative',
           imagePosition === 'center'
             ? 'container-narrow'
-            : 'max-w-full container-wide grid lg:grid-cols-2',
+            : 'max-w-full container-wide grid lg:grid-cols-2z',
           innerClassName,
         )}
         style={{
@@ -88,7 +88,7 @@ export const LandingProductFeature = ({
       >
         <div
           className={clsx(
-            'flex flex-col gap-4',
+            'flex flex-col gap-4 self-start',
             imagePosition === 'left' && 'lg:col-start-2 lg:row-start-1',
             textPosition === 'center'
               ? 'md:max-w-lg items-center text-center'
@@ -102,7 +102,7 @@ export const LandingProductFeature = ({
           )}
 
           {description ? (
-            <p className="mt-4 md:text-xl">{description}</p>
+            <p className="md:text-xl">{description}</p>
           ) : (
             descriptionComponent
           )}

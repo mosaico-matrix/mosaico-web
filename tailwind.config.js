@@ -20,7 +20,7 @@ export const colors = {
 const config = {
   darkMode: 'class',
   content: [
-    './resources/js/pages/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './resources/js/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './resources/js/components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {

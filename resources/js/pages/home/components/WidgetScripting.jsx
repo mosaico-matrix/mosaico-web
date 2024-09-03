@@ -6,12 +6,14 @@ export default function WidgetScripting()
 
     <LandingProductFeature
         imagePerspective="left"
-        title="Write your own scripts"
+        title="Write and publish your own widgets"
         variant="secondary"
         backgroundGlowVariant="secondary"
-        description="With python you will feel right at home. Write your own scripts to generate content, add custom features or even create your own widgets."
-        imageSrc="/static/images/backdrop-5.webp"
-        imageAlt="Sample image"
+        description="With python you will feel right at home.
+        Write your own widgets to dynamically display content on your LED matrix and share them with the community on the Mosaico App Store.
+        "
+        imageSrc="/images/widget-script.png"
+        imageAlt="Widget Scripting"
     />
     )
 }

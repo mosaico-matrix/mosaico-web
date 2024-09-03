@@ -72,7 +72,7 @@ export const LandingProductVideoFeature = ({
     >
       <div
         className={clsx(
-          'w-full p-6 flex flex-col items-center relative',
+          'w-full p-6 flex flex-col items-start relative',
           videoPosition === 'center'
             ? 'container-narrow'
             : 'max-w-full container-ultrawide grid lg:grid-cols-12 gap-8 lg:gap-16',
@@ -99,7 +99,7 @@ export const LandingProductVideoFeature = ({
           )}
 
           {description ? (
-            <p className="mt-4 md:text-xl">{description}</p>
+            <p className="md:text-xl">{description}</p>
           ) : (
             descriptionComponent
           )}

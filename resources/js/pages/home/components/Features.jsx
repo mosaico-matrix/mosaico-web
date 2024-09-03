@@ -1,8 +1,9 @@
 import {LandingFeatureList} from '@/components/landing/feature/LandingFeatureList';
 import {
-    GithubIcon,
+    CodeIcon,
+    GithubIcon, GlobeIcon, GripIcon,
     LayersIcon,
-    LineChartIcon,
+    LineChartIcon, SmartphoneIcon,
     SparklesIcon,
     ThumbsUpIcon,
     ZapIcon,
@@ -11,23 +12,42 @@ import {
 export default function Features() {
     const featureItems = [
         {
-            title: 'Automatic deployment to Vercel',
+            title: 'Software',
             description:
-                'Deploying the generated template to Vercel is as easy as clicking a button. ',
+                'The code that runs on the Pi and drives the LED matrix. ' +
+                'Written in C++ and Python it manages the connection to the mobile app, the database of the installed widgets,' +
+                ' the rendering of the widgets and the communication with the LED matrix.',
             icon: <SparklesIcon/>,
         },
         {
-            title: 'Dynamic Social Image',
+            title: 'Mobile App',
             description:
-                'We generate an open graph image that will be visible when you share your site online.',
-            icon: <LineChartIcon/>,
+                'The end user interface to the Mosaico ecosystem. ' +
+                'Written in Dart with Flutter it allows the user to browse the app store, install widgets, ' +
+                'configure them, create slideshows and manage the connection to the LED matrix.',
+            icon: <SmartphoneIcon/>,
         },
         {
-            title: 'MDX blog, no server required',
+            title: 'IDE',
             description:
-                'Shipixen comes with a fully featured MDX blog. ',
-            icon: <LayersIcon/>,
+                'A small, dummy app that allows new developers to write and test their widgets while previewing them on the LED matrix. ' +
+                'Written in Dart with Flutter it provides a simple interface to write and test widgets.',
+            icon: <CodeIcon/>,
         },
+        {
+            title: 'Website + App Store',
+            description:
+                'The web stack that powers the Mosaico website and the app store. ' +
+                'Written in Laravel and React it allows developers to submit their widgets and the mobile app to browse and install them.',
+            icon: <GlobeIcon/>,
+        },
+        {
+            title: 'Matrix Simulator',
+            description:
+                'A small, dummy app that allows new developers to write and test their widgets while previewing them on the LED matrix. ' +
+                'Written in Dart with Flutter it provides a simple interface to write and test widgets.',
+            icon: <GripIcon/>,
+        }
     ]
 
     return (
@@ -35,9 +55,9 @@ export default function Features() {
             withBackgroundGlow
             backgroundGlowVariant="primary"
             variant="primary"
-            title={"Nothing quite like it."}
+            title={"The mosaico ecosystem"}
             description={
-                'Shipixen sets up everything you need to start working on your blog, website or product.'
+                ''
             }
             featureItems={featureItems}
         />);

@@ -14,20 +14,20 @@ export default function Components()
                 >
                     <LandingProductFeature
                         title="Raspberry Pi"
-                        description=""
+                        description="Zero W, 3 or 4"
                         imageSrc={'/images/rpi.webp'}
                     />
 
                     <LandingProductFeature
-                        title="Raspberry Pi"
-                        description=""
-                        imageSrc={'/images/rpi.webp'}
+                        title="Matrix Bonnet"
+                        description="Or manual wiring if you're feeling brave"
+                        imageSrc={'/images/bonnet.png'}
                     />
 
                     <LandingProductFeature
-                        title="Raspberry Pi"
-                        description=""
-                        imageSrc={'/images/rpi.webp'}
+                        title="LED Matrix"
+                        description="Any 64x64 is good, search on AliExpress or Amazon"
+                        imageSrc={'/images/matrix.png'}
                     />
                 </LandingProductFeaturesGrid>
             </>
