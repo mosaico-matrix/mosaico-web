@@ -6,6 +6,11 @@ export default function Footer() {
                     <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul>
                         <li className="mb-2">
+                            <a href="https://github.com/mosaico-matrix" className="text-gray-400 hover:text-white">
+                                Github
+                            </a>
+                        </li>
+                        <li className="mb-2">
                             <a href="/manager" className="text-gray-400 hover:text-white">
                                 Widget Manager
                             </a>

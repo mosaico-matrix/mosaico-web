@@ -3,27 +3,31 @@ import {LandingFaqSection} from '@/components/landing/LandingFaq';
 export default function Faq() {
     const faqItems = [
         {
-          question: "Cool but why?",
-            answer: "Basically, this is my bachelor thesis project. I didn't want to do something boring and I wanted a project that would be useful to me. " +
-                "I also wanted to learn more about embedded systems and IOT. This is my first time writing code for actual hardware!",
+            question: "Cool, but why?",
+            answer: "This is my bachelor thesis project. I wanted to do something interesting and useful while learning more about embedded systems and IoT. It's my first time coding for actual hardware!",
+        },
+        {
+            question: "Can I try it out before buying all the components?",
+            answer: "Absolutely! You can build and run the software on your computer. There's a special flag to compile an X11 application instead of sending output to the hardware matrix. The simulator is a 1:1 representation, so you’ll see exactly how your widgets will look on the real hardware.",
+        },
+        {
+            question: "I can't run the simulator on Windows or Mac. Help!",
+            answer: "Get Linux. Jk! For now, you can set up a virtual machine. I'm also planning to add a web-based simulator or standalone application for Windows and Mac.",
         },
         {
             question: "What exactly is a widget?",
-            answer: "Nothing more than a python script! Well, you also need to submit a small 'metadata' file to describe your widget properties and a" +
-                " form configuration if you want your widget to be configurable. ",
+            answer: "It's essentially a Python script! You also need a small 'metadata' file to describe your widget's properties, and a configuration form if you want it to be configurable.",
         },
         {
             question: "What is a configurable widget?",
-            answer: "A configurable widget is a widget that can be customized by the user. For example, a weather widget can be configured to display the temperature in Celsius or Fahrenheit.",
+            answer: "A configurable widget requires user input before it can be displayed. For example, the image widget needs an image upload. Users can submit multiple configurations for the same widget, allowing easy content changes.",
         },
         {
-            question: "Eww python is so slow on a Pi0, why didn't you use C++?",
-            answer: "The software that runs on the Pi is actually written in C++ and is very fast and has a very low memory footprint. " +
-                "The Python code is only used to interpret the widget dynamically so that there's no need to recompile the software every time you want to create a new widget! ",
+            question: "Python is slow on a Pi0. Why not use C++?",
+            answer: "The software on the Pi is actually written in C++, it's fast and has a low memory footprint. Python is only used to dynamically interpret widgets, so you don’t need to recompile the software every time you create a new widget.",
         },
-
-        AGGIUNGI QUI ALTRO TIPO SIMULATORE
     ];
+
 
     return (
 
