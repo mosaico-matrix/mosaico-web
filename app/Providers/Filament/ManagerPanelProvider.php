@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Livewire\CustomLogin;
+use App\Models\User;
 use DutchCodingCompany\FilamentSocialite\FilamentSocialitePlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -19,6 +21,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use DutchCodingCompany\FilamentSocialite\Provider;
+use Laravel\Socialite\Contracts\User as SocialiteUserContract;
 
 class ManagerPanelProvider extends PanelProvider
 {
@@ -28,11 +31,12 @@ class ManagerPanelProvider extends PanelProvider
             ->default()
             ->id('manager')
             ->path('manager')
-            ->login()
-            ->registration(Pages\Auth\Register::class)
+            ->darkMode(true, true)
+            ->brandLogo("/images/icon.png")
             ->colors([
                 'primary' => Color::hex('#000000'),
             ])
+            ->spa()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -41,7 +45,6 @@ class ManagerPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -62,20 +65,21 @@ class ManagerPanelProvider extends PanelProvider
                             ->label('Github')
                             ->icon('fab-github')
                             ->scopes([
-                                // Add scopes here.
                                 'read:user',
                                 'public_repo',
                             ]),
                     ])
-                    // (optional) Enable/disable registration of new (socialite-) users.
-                    ->registration(true)
-                    // (optional) Enable/disable registration of new (socialite-) users using a callback.
-                    // In this example, a login flow can only continue if there exists a user (Authenticatable) already.
-//                    ->registration(fn (string $provider, SocialiteUserContract $oauthUser, ?Authenticatable $user) => (bool) $user)
-//                    // (optional) Change the associated model class.
-//                    ->userModelClass(\App\Models\User::class)
-//                    // (optional) Change the associated socialite class (see below).
-//                    ->socialiteUserModelClass(\App\Models\SocialiteUser::class)
+                    ->registration()
+                    ->createUserUsing(function (string $provider, SocialiteUserContract $oauthUser, FilamentSocialitePlugin $plugin) {
+                        return User::create([
+                            'name' => $oauthUser->getName(),
+                            'email' => $oauthUser->getEmail(),
+                            'username' => $oauthUser->getNickname(),
+                        ]);
+                    })
+                    ->resolveUserUsing(function (string $provider, SocialiteUserContract $oauthUser, FilamentSocialitePlugin $plugin) {
+                        return User::where('email', $oauthUser->getEmail())->first();
+                    }),
             ])
             ->authMiddleware([
                 Authenticate::class,

@@ -1,4 +1,4 @@
-import {BookMarkedIcon, FileSpreadsheetIcon, GithubIcon, LucideSheet, SheetIcon} from "lucide-react";
+import {BookMarkedIcon, FileSpreadsheetIcon, GithubIcon, LayoutGridIcon, LucideSheet, SheetIcon} from "lucide-react";
 import {Document} from "postcss";
 
 export default function Header() {
@@ -12,11 +12,18 @@ export default function Header() {
 
             {/* Right section: Links */}
             <nav className="flex space-x-6">
-                <a href="https://github.com/mosaico-matrix" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-                    <GithubIcon size={24} />
+                <a href="/manager" target="_blank" rel="noopener noreferrer"
+                   className="hover:text-gray-300">
+                    <LayoutGridIcon size={24}/>
                 </a>
+
                 <a href="/docs" className="hover:text-gray-300">
-                    <BookMarkedIcon size={24} />
+                    <BookMarkedIcon size={24}/>
+                </a>
+
+                <a href="https://github.com/mosaico-matrix" target="_blank" rel="noopener noreferrer"
+                   className="hover:text-gray-300">
+                    <GithubIcon size={24}/>
                 </a>
             </nav>
         </header>

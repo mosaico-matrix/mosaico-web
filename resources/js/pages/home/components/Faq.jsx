@@ -21,6 +21,8 @@ export default function Faq() {
             answer: "The software that runs on the Pi is actually written in C++ and is very fast and has a very low memory footprint. " +
                 "The Python code is only used to interpret the widget dynamically so that there's no need to recompile the software every time you want to create a new widget! ",
         },
+
+        AGGIUNGI QUI ALTRO TIPO SIMULATORE
     ];
 
     return (

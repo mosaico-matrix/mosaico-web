@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\WidgetResource\Pages;
 use App\Filament\Resources\WidgetResource\RelationManagers;
+use App\Models\User;
 use App\Models\Widget;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -57,6 +58,7 @@ class WidgetResource extends Resource
                     ->label('Images')
                     ->hint('Help the users know what your widget looks like')
                     ->collection('images')
+                    ->maxFiles(5)
                     ->columnSpanFull()
                     ->multiple()
                     ->image(),
@@ -70,6 +72,11 @@ class WidgetResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->description(function () {
+                return auth()->user()->canUploadInfiniteWidgets() ? '' :
+                    'You can only upload up to ' . User::$MaxWidgetsPerUnverifiedUser . ' widgets' .
+                    ' contact an administator if you want to upload more';
+            })
             ->modifyQueryUsing(function (Builder $query) {
                 $query->where('user_id', auth()->id());
             })

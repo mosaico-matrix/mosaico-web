@@ -20,7 +20,7 @@ class WidgetFactory extends Factory
         return [
             'name' => $this->faker->word,
             'tagline' => $this->faker->sentence,
-            'description' => file_get_contents(resource_path('examples/widgets/description.md')),
+            'description' => file_get_contents(resource_path('seeders/widget-description.md')),
         ];
     }
 }
