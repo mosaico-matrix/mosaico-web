@@ -9,12 +9,14 @@ import clsx from 'clsx';
 export const LandingFeature = ({
   className,
   title,
+  url,
   description,
   icon,
   variant = 'primary',
 }: {
   className?: string;
   title: string;
+    url: string;
   description: string;
   icon: React.ReactNode;
   variant?: 'primary' | 'secondary';
@@ -33,7 +35,7 @@ export const LandingFeature = ({
         {icon}
       </div>
 
-      <h3 className="text-lg font-semibold">{title}</h3>
+      <h3 className="text-lg font-semibold text-primary">{url ? <a href = {url}>{title}</a> : title}</h3>
       <p className="text-sm text-gray-800 dark:text-gray-200">{description}</p>
     </div>
   );

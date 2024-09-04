@@ -5,6 +5,7 @@ import { GlowBg } from '@/components/shared/ui/glow-bg';
 export interface FeatureListItem {
   title: string;
   description: string;
+  url: string;
   icon: React.ReactNode;
 }
 
@@ -82,6 +83,7 @@ export const LandingFeatureList = ({
             <LandingFeature
               key={index}
               title={featureItem.title}
+                url={featureItem.url}
               description={featureItem.description}
               icon={featureItem.icon}
               variant={variant}
