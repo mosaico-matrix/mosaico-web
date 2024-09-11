@@ -6,7 +6,7 @@ export default function Footer() {
                     <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul>
                         <li className="mb-2">
-                            <a href="https://github.com/orgs/mosaico-matrix/repositories" className="text-gray-400 hover:text-white">
+                            <a href="https://github.com/orgs/mosaico-matrix" className="text-gray-400 hover:text-white">
                                 Github
                             </a>
                         </li>
