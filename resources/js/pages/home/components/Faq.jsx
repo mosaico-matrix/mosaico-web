@@ -24,7 +24,7 @@ export default function Faq() {
         },
         {
             question: "Python is slow on a Pi0. Why not use C++?",
-            answer: "The software on the Pi is actually written in C++, it's fast and has a low memory footprint. Python is only used to dynamically interpret widgets, so you don’t need to recompile the software every time you create a new widget.",
+            answer: "The software on the Pi is actually written in C++, it's fast and has a low memory footprint. Python is only used to dynamically interpret widgets, so you don’t need to recompile the software every time you create a new one.",
         },
     ];
 

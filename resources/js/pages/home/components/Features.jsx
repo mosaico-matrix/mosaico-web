@@ -50,7 +50,7 @@ export default function Features() {
             url: 'https://github.com/mosaico-matrix/mosaico-software',
             description:
                 'A small, dummy app that allows new developers to write and test their widgets while previewing them on the LED matrix. ' +
-                'Written in Dart with Flutter it provides a simple interface to write and test widgets.',
+                "It's a X11 application that simulates a 1:1 LED matrix on a desktop environment.",
             icon: <GripIcon/>,
         }
     ]
