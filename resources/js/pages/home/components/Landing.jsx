@@ -12,11 +12,11 @@ export default function Landing() {
         >
             <div className="flex flex-col items-start justify-center text-center ">
 
-                <Button size="xl" asChild>
-                    <a href="/docs">Get Started</a>
-                </Button>
+                {/*<Button size="xl" asChild>*/}
+                {/*    <a href="/docs">Get Started</a>*/}
+                {/*</Button>*/}
 
-                <div style={{height: '30px'}}></div>
+                {/*<div style={{height: '30px'}}></div>*/}
 
                 <div className="text-gray-500">
                     Download the app
@@ -27,7 +27,7 @@ export default function Landing() {
                     <a href="https://apps.apple.com/us/app/mosaico-control/id6670337285" target="_blank" rel="noopener noreferrer">
                         <img src="/images/app-store.svg" alt="Download on the App Store" className="h-14"/>
                     </a>
-                    <a href="" target="_blank"
+                    <a href="/android" target="_blank"
                        rel="noopener noreferrer">
                         <img src="/images/google-play.svg" alt="Get it on Google Play" className="h-14"/>
                     </a>

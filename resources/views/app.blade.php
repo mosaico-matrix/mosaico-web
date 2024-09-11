@@ -6,6 +6,7 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.jsx')
     @inertiaHead
+    <title>MOSAICO</title>
 </head>
 <body class="dark">
 @inertia
