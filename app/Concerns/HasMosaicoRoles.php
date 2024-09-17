@@ -6,6 +6,7 @@ trait HasMosaicoRoles
     public static string $SUPER_ADMIN_ROLE = 'super-admin';
     public static string $ADMIN_ROLE = 'admin';
     public static string $VERIFIED_DEVELOPER_ROLE = 'verified-developer';
+    public static string $DISABLED_ROLE = 'disabled';
 
     public function isSuperAdmin(): bool
     {
@@ -15,6 +16,11 @@ trait HasMosaicoRoles
     public function isAdmin(): bool
     {
         return $this->hasRole(self::$ADMIN_ROLE);
+    }
+
+    public function isDisabled(): bool
+    {
+        return $this->hasRole(self::$DISABLED_ROLE);
     }
 
     public function isVerifiedDeveloper(): bool

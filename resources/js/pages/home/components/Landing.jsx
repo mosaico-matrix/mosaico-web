@@ -27,7 +27,7 @@ export default function Landing() {
                     <a href="https://apps.apple.com/us/app/mosaico-control/id6670337285" target="_blank" rel="noopener noreferrer">
                         <img src="/images/app-store.svg" alt="Download on the App Store" className="h-14"/>
                     </a>
-                    <a href="/android" target="_blank"
+                    <a href="https://play.google.com/store/apps/details?id=com.murkrow.mosaico" target="_blank"
                        rel="noopener noreferrer">
                         <img src="/images/google-play.svg" alt="Get it on Google Play" className="h-14"/>
                     </a>

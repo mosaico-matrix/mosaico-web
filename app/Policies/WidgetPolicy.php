@@ -13,7 +13,7 @@ class WidgetPolicy
      */
     public function viewAny(User $user): bool
     {
-        return true;
+        return !$user->isDisabled();
     }
 
     /**
@@ -21,7 +21,7 @@ class WidgetPolicy
      */
     public function view(User $user, Widget $widget): bool
     {
-        return $widget->user_id === $user->id;
+        return $widget->user_id === $user->id && !$user->isDisabled();
     }
 
     /**
@@ -29,6 +29,10 @@ class WidgetPolicy
      */
     public function create(User $user): bool
     {
+        if ($user->isDisabled()) {
+            return false;
+        }
+
         return
             $user->canUploadInfiniteWidgets() ||
             $user->widgets()->count() < User::$MaxWidgetsPerUnverifiedUser;

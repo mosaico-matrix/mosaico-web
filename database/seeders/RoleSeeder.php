@@ -18,6 +18,7 @@ class RoleSeeder extends Seeder
             ['name' => User::$SUPER_ADMIN_ROLE],
             ['name' => User::$ADMIN_ROLE],
             ['name' => User::$VERIFIED_DEVELOPER_ROLE],
+            ['name' => User::$DISABLED_ROLE],
         ];
 
         foreach ($roles as $role) {

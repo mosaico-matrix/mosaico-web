@@ -1,5 +1,8 @@
 import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
 import { Button } from '@/components/shared/ui/button';
+
+
+// Not used anymore
 export default function Android() {
     return (
         <LandingPrimaryTextCtaSection

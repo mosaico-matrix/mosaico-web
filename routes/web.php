@@ -18,9 +18,6 @@ Route::get('privacy', function () {
     return Inertia::render('Privacy');
 });
 
-Route::get('android', function () {
-    return Inertia::render('Android');
-});
 
 Route::get('login', function () {
     return view('auth.login');
