@@ -32,7 +32,7 @@ class UserResource extends Resource
                     ->columnSpanFull()
                     ->multiple()
                     ->relationship('roles', 'name')
-                    ->label(__('generic.roles'))
+                    ->label('Roles')
                     ->reactive()
                     ->options(function () {
                         // Get all roles
